@@ -3,6 +3,8 @@ package com.donfyy.main_module
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import com.alibaba.android.arouter.facade.annotation.Autowired
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.blankj.utilcode.util.LogUtils
 import com.donfyy.common_module.base.BaseActivity
@@ -10,9 +12,12 @@ import com.donfyy.market_api.MarketRouterTable
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.ArrayList
 
+@Route(path = "/main/MainActivity")
 class MainActivity : BaseActivity() {
     private lateinit var fragmentsList: ArrayList<Fragment>
     private lateinit var bottomNavigationView: BottomNavigationView
+//    @Autowired
+//    var aInt = 0
     private val fragmentMap = hashMapOf<Int, Fragment>()
     private val fragmentClassMap = hashMapOf(
         R.id.fragment_1 to MarketRouterTable.MAIN_FRAGMENT,
